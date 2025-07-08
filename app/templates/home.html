@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog vs Cat Classifier</title>
+</head>
+<body>
+    <h2>🐕 🐱 Pet Classifier</h2>
+    <div class="instructions">
+            <h3>How to use:</h3>
+            <ul>
+                <li>Click "Choose file" to select a photo</li>
+                <li>Click "Predict Image" to get the prediction</li>
+            </ul>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="img" accept="image/*" required>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction == 'dog'%}
+        <h3>Prediction: 🐕  {{ prediction }}</h3>
+    {% elif prediction == 'cat'%}
+        <h3>Prediction: 🐱 {{ prediction }} </h3>
+    {% endif %}
+</body>
+</html>
